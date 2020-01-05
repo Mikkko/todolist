@@ -1,1 +1,5 @@
-@include('layouts.layout')
+@extends ('layouts.layout')
+
+@section ('navbar')
+    @include('templates.indexNavbar')
+@endsection
