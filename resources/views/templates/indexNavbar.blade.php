@@ -7,7 +7,6 @@
             <form id="frm-logout" action="{{ route('logout') }}" method="POST" hidden>
                 {{ csrf_field() }}
             </form>
-
         </li>
     </ul>
 </div>

@@ -1,5 +1,4 @@
 <div class="container mt-5">
-    <h1 class="text-center">Registration</h1>
     <form action="{{route('register')}}" method="post">
         {{csrf_field()}}
         <div class="form-group">

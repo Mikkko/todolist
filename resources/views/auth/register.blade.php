@@ -5,5 +5,6 @@
 @endsection
 
 @section('content')
+    @include('templates.registrationHeader')
     @include('templates.registrationContent')
 @endsection
