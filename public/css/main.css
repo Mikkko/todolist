@@ -2,6 +2,8 @@ html, body {
     font-size: 16px;
     height: 100%;
     width: 100%;
+    font-family: Arial, sans-serif;
+    font-weight: 400;
 }
 
 body {
@@ -14,4 +16,84 @@ body {
 
 #logoutLink {
     cursor: pointer;
+}
+
+.headline {
+    color: #343a40;
+    text-align: center;
+}
+
+.alert {
+    width: 100%;
+    position: absolute;
+}
+
+.alert:hover {
+    cursor: pointer;
+}
+
+.add-todo-button {
+    margin-top: 100px;
+    background: linear-gradient(to top, #3d5da2, #4f7fb3);
+    border-color: steelblue;
+    color: white;
+    height: 40px;
+    width: 150px;
+    font-weight: bolder;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.delete-todoListSubmit {
+    background: none!important;
+    border: none;
+    padding: 0!important;
+    cursor: pointer;
+}
+
+.edit-todoListSubmit {
+    background: none!important;
+    border: none;
+    padding: 0!important;
+    cursor: pointer;
+}
+
+button:active, button:focus {
+  outline: none;
+}
+
+button::-moz-focus-inner {
+  border: 0;
+}
+
+.editTodoListForm {
+    display: none;
+}
+
+.todolist_title {
+    color: white;
+    font-size: 20px;
+}
+
+.thead-row {
+    background: linear-gradient(to top, #395ca0, #5483b7);
+    min-height: 50px;
+    padding: auto;
+}
+
+.delete-todoList, .edit-todoList {
+    cursor: pointer;
+    color: #8cb1e6;
+    opacity: 0;
+    transition: opacity .3s;
+}
+
+.thead-row:hover .delete-todoList, .thead-row:hover .edit-todoList {
+    opacity: 1;
+    transition: opacity .3s;
+}
+
+.delete-todoListForm {
+    float: right;
 }
