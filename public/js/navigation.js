@@ -1,3 +1,11 @@
-document.getElementById('logoutLink').onclick = function () {
-    document.getElementById('frm-logout').submit();
-};
+$("#logoutLink").click(function() {
+    $('#frm-logout').submit();
+});
+
+$(".alert").delay(2000).fadeOut("normal", function () {
+    $(this).remove();
+});
+
+$(".alert").click(function () {
+    $(this).remove();
+});
