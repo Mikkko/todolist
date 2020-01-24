@@ -2,7 +2,7 @@ $("#logoutLink").click(function() {
     $('#frm-logout').submit();
 });
 
-$(".alert").delay(2000).fadeOut("normal", function () {
+$(".alert").delay(3000).fadeOut("normal", function () {
     $(this).remove();
 });
 
