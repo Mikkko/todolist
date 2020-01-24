@@ -1,7 +1,7 @@
 <?php
 
 namespace App;
-
+use App\Task;
 use Illuminate\Database\Eloquent\Model;
 
 class TodoList extends Model
@@ -11,6 +11,11 @@ class TodoList extends Model
     public function user ()
     {
         return $this->belongsTo(User::class);
+    }
+
+    public function todolist_tasks()
+    {
+        return $this->hasMany(Task::class, 'todolist_id');
     }
 
     public static function getAllTodoListsForCurrentUser ()
@@ -24,6 +29,7 @@ class TodoList extends Model
 
     public static function deleteTodoList ($id)
     {
+        Task::deleteAllTasksFromTodoList($id);
         return self::where('id', $id)->delete();
     }
 
