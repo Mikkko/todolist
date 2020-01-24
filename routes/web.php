@@ -2,8 +2,11 @@
 
 Route::get('/', 'TodoListsController@index')->name('todolists.index')->middleware('auth');
 Route::post('/todolist/create', 'TodoListsController@create')->name('todolist.create');
-Route::delete('/todolist/{id}/delete', 'TodoListsController@delete')->name('todolist.delete');
-Route::get('/todolist/{id}/edit', 'TodoListsController@edit')->name('todolist.edit');
+Route::delete('/todolist/{id}/delete', 'TodoListsController@delete');
+Route::get('/todolist/{id}/edit', 'TodoListsController@edit');
+
+Route::post('/todolist/{id}/task/create', 'TasksController@create');
+Route::delete('task/{id}/delete', 'TasksController@delete');
 
 Auth::routes();
 
