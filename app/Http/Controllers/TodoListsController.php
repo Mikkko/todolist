@@ -21,7 +21,7 @@ class TodoListsController extends Controller
 
     protected function validator(array $data)
     {
-        return Validator::make($data, ['title' => ['required', 'string', 'max:16']]);
+        return Validator::make($data, ['title' => ['required', 'string', 'max:10']]);
     }
 
     public function edit(Request $request, $id)
