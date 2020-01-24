@@ -10,12 +10,16 @@ body {
     background: linear-gradient(to bottom, #fcf8eb, #e08100);
 }
 
-.navbar-dark {
-    background: linear-gradient(to bottom, #6d89c4, #303086);
+.nav-link {
+    color: white !important;
 }
 
-#logoutLink {
-    cursor: pointer;
+.nav-link:hover {
+    color: #8cb1e6 !important;
+}
+
+.navbar-dark {
+    background: linear-gradient(to bottom, #6d89c4, #303086);
 }
 
 .headline {
@@ -32,6 +36,10 @@ body {
     cursor: pointer;
 }
 
+#logoutLink {
+    cursor: pointer;
+}
+
 .add-todo-button {
     margin-top: 100px;
     background: linear-gradient(to top, #3d5da2, #4f7fb3);
@@ -45,6 +53,40 @@ body {
     display: block;
 }
 
+.thead-row {
+    background: linear-gradient(to top, #395ca0, #5483b7);
+    min-height: 40px;
+    padding-top: 5px;
+}
+
+.tmiddle-row {
+    min-height: 40px;
+    padding-top: 5px;
+    background: linear-gradient(to top, #cacaca, #d9e0f0);
+}
+
+.task-row {
+    padding-top: 5px;
+    min-height: 40px;
+    background: white;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.thead-row:hover .delete-todoList, .thead-row:hover .edit-todoList {
+    opacity: 1;
+    transition: opacity .3s;
+}
+
+.delete-todoList:hover, .edit-todoList:hover {
+    color: #6d89c4;
+}
+
+.todolist_title {
+    color: white;
+    font-size: 20px;
+}
+
 .delete-todoListSubmit {
     background: none!important;
     border: none;
@@ -52,11 +94,37 @@ body {
     cursor: pointer;
 }
 
+.delete-todoList, .edit-todoList {
+    cursor: pointer;
+    color: #8cb1e6;
+    opacity: 0;
+    transition: opacity .3s;
+}
+
+.delete-todoListForm {
+    float: right;
+}
+
+.editTodoListForm {
+    display: none;
+}
+
 .edit-todoListSubmit {
     background: none!important;
     border: none;
     padding: 0!important;
     cursor: pointer;
+}
+
+.fa-times {
+    cursor: pointer;
+    margin-left: 10px;
+    color: red;
+}
+
+.fa-check {
+    margin-left: 10px;
+    color: lime;
 }
 
 button:active, button:focus {
@@ -67,33 +135,54 @@ button::-moz-focus-inner {
   border: 0;
 }
 
-.editTodoListForm {
-    display: none;
+.fa-plus {
+    color: darkgreen;
 }
 
-.todolist_title {
+.createTaskSubmit {
+    float: left;
+    height: 30px;
+    width: 90px;
+    border-color: #9dbcac;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+    font-weight: bold;
     color: white;
-    font-size: 20px;
+    background: linear-gradient(to top, #528467, #9dbcac);
 }
 
-.thead-row {
-    background: linear-gradient(to top, #395ca0, #5483b7);
-    min-height: 50px;
-    padding: auto;
+.task-row:hover {
+    background: #fff9bf;
 }
 
-.delete-todoList, .edit-todoList {
-    cursor: pointer;
+.checkTask {
+    margin-left: 5px;
+}
+
+.sort-task, .edit-task, .delete-task {
+    margin-left: 10px;
     color: #8cb1e6;
     opacity: 0;
     transition: opacity .3s;
 }
 
-.thead-row:hover .delete-todoList, .thead-row:hover .edit-todoList {
+.task-row:hover .sort-task, .task-row:hover .edit-task, .task-row:hover .delete-task {
+    cursor: pointer;
     opacity: 1;
     transition: opacity .3s;
 }
 
-.delete-todoListForm {
+.sort-task:hover, .edit-task:hover, .delete-task:hover {
+    color: #6d89c4;
+}
+
+.delete-taskForm {
     float: right;
+}
+
+.delete-taskSubmit {
+    background: none!important;
+    border: none;
+    padding: 0!important;
+    cursor: pointer;
 }
