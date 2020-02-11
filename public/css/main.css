@@ -10,6 +10,14 @@ body {
     background: linear-gradient(to bottom, #fcf8eb, #e08100);
 }
 
+button:active, button:focus {
+  outline: none;
+}
+
+button::-moz-focus-inner {
+  border: 0;
+}
+
 .nav-link {
     color: white !important;
 }
@@ -57,20 +65,21 @@ body {
     background: linear-gradient(to top, #395ca0, #5483b7);
     min-height: 40px;
     padding-top: 5px;
+    box-shadow: 0 0 1px 0;
 }
 
 .tmiddle-row {
     min-height: 40px;
     padding-top: 5px;
     background: linear-gradient(to top, #cacaca, #d9e0f0);
+    box-shadow: 0 0 1px 0;
 }
 
 .task-row {
     padding-top: 5px;
     min-height: 40px;
     background: white;
-    border-bottom-right-radius: 10px;
-    border-bottom-left-radius: 10px;
+    box-shadow: 0 0 1px 0;
 }
 
 .thead-row:hover .delete-todoList, .thead-row:hover .edit-todoList {
@@ -109,6 +118,10 @@ body {
     display: none;
 }
 
+.todoListTitleInput {
+    width: 60%;
+}
+
 .edit-todoListSubmit {
     background: none!important;
     border: none;
@@ -127,16 +140,12 @@ body {
     color: lime;
 }
 
-button:active, button:focus {
-  outline: none;
-}
-
-button::-moz-focus-inner {
-  border: 0;
-}
-
 .fa-plus {
     color: darkgreen;
+}
+
+.taskTitleInput {
+    width: 100%;
 }
 
 .createTaskSubmit {
@@ -159,6 +168,12 @@ button::-moz-focus-inner {
     margin-left: 5px;
 }
 
+.task_title {
+    color: grey;
+    font-size: 14px;
+    font-weight: 500;
+}
+
 .sort-task, .edit-task, .delete-task {
     margin-left: 10px;
     color: #8cb1e6;
@@ -174,6 +189,17 @@ button::-moz-focus-inner {
 
 .sort-task:hover, .edit-task:hover, .delete-task:hover {
     color: #6d89c4;
+}
+
+.editTaskForm {
+    display: none;
+}
+
+.edit-taskSubmit {
+    background: none!important;
+    border: none;
+    padding: 0!important;
+    cursor: pointer;
 }
 
 .delete-taskForm {
