@@ -7,6 +7,7 @@ Route::get('/todolist/{id}/edit', 'TodoListsController@edit');
 
 Route::post('/todolist/{id}/task/create', 'TasksController@create');
 Route::delete('task/{id}/delete', 'TasksController@delete');
+Route::get('/task/{id}/edit', 'TasksController@edit');
 
 Auth::routes();
 
