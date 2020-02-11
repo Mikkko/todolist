@@ -20,21 +20,22 @@ class TodoList extends Model
 
     public static function getAllTodoListsForCurrentUser ()
     {
+        Task::deleteTaskWithDeadline();
         return self::where('user_id', auth()->id())->get();
     }
 
-    public static function NewTodoList () {
+    public static function newTodoList () {
         return self::create(['title' => 'New todolist', 'user_id' => auth()->id()]);
+    }
+
+    public static function editTodoList ($id)
+    {
+        return self::findOrFail($id)->update(['title'=>request('title')]);
     }
 
     public static function deleteTodoList ($id)
     {
         Task::deleteAllTasksFromTodoList($id);
         return self::where('id', $id)->delete();
-    }
-
-    public static function editTodoList ($id)
-    {
-        return self::findOrFail($id)->update(['title'=>request('title')]);
     }
 }
