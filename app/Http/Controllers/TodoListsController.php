@@ -15,7 +15,7 @@ class TodoListsController extends Controller
 
     public function create ()
     {
-        TodoList::NewTodoList()->save();
+        TodoList::newTodoList()->save();
         return redirect()->route('todolists.index')->with('success', 'New TodoList successfully created!');
     }
 
