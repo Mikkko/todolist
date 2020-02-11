@@ -14,10 +14,22 @@ namespace App{
 /**
  * App\Task
  *
+ * @property int $id
+ * @property int $todolist_id
+ * @property string $title
+ * @property string|null $deadline
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
  * @property-read \App\TodoList $todolist
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Task newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Task newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Task query()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Task whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Task whereDeadline($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Task whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Task whereTitle($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Task whereTodolistId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Task whereUpdatedAt($value)
  */
 	class Task extends \Eloquent {}
 }
@@ -31,6 +43,8 @@ namespace App{
  * @property int $user_id
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Task[] $todolist_tasks
+ * @property-read int|null $todolist_tasks_count
  * @property-read \App\User $user
  * @method static \Illuminate\Database\Eloquent\Builder|\App\TodoList newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\TodoList newQuery()
