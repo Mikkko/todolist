@@ -7,7 +7,10 @@ Route::get('/todolist/{id}/edit', 'TodoListsController@edit');
 
 Route::post('/todolist/{id}/task/create', 'TasksController@create');
 Route::delete('task/{id}/delete', 'TasksController@delete');
-Route::get('/task/{id}/edit', 'TasksController@edit');
+Route::get('/task/{id}/editDeadline', 'TasksController@editDeadline');
+Route::post('/task/{id}/completeTask', 'TasksController@completeTask');
+Route::get('/task/{id}/editTaskTitle', 'TasksController@editTitle');
+Route::post('/task/sortTasks', 'TasksController@sortTasks');
 
 Auth::routes();
 
