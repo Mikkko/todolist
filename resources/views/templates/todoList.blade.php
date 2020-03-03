@@ -44,10 +44,27 @@
                     </div>
                 </div>
             </form>
-            @if(count($todolist->todolist_tasks) > 0 )
-                @foreach($todolist->todolist_tasks as $task)
-                    @include('templates.todoListTaskRow')
-                @endforeach
+
+            @if(count($todolist->todolist_tasks)>0)
+                <!-- <div class="row">
+                    <div class="col tasks-row">
+                        @foreach($todolist->todolist_tasks as $task)
+                            @include('templates.todoListTaskRow')
+                        @endforeach
+                    </div>
+                </div> -->
+
+                <div class="row">
+                    <div class="col">
+                        <ul class="tasks-row">
+                            @foreach($todolist->todolist_tasks as $task)
+                                <li id="{{$task->id}}">
+                                    @include('templates.todoListTaskRow')
+                                </li>
+                            @endforeach
+                        </ul>
+                    </div>
+                </div>
             @else
                 @include('templates.todoListNoTasksRow')
             @endif
