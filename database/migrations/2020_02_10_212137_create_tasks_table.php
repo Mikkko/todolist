@@ -10,10 +10,12 @@ class CreateTasksTable extends Migration
     {
         Schema::create('tasks', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('title');
+            $table->string('status')->default('');
+            $table->integer('position')->default('0');
+            $table->string('deadline');
             $table->unsignedBigInteger('todolist_id');
             $table->foreign('todolist_id')->references('id')->on('todo_lists');
-            $table->string('title');
-            $table->string('deadline');
             $table->timestamps();
         });
     }
