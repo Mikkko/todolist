@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 use Validator;
 use App\Task;
 use Carbon\Carbon;
+use Session;
 
 class TasksController extends Controller
 {
@@ -17,7 +18,7 @@ class TasksController extends Controller
 
     protected function createTaskValidator(array $data)
     {
-        return Validator::make($data, ['title' => ['required', 'string', 'max:16']]);
+        return Validator::make($data, ['title' => ['required', 'string']]);
     }
 
     protected function editDeadlineValidator(array $data)
@@ -26,12 +27,36 @@ class TasksController extends Controller
         return Validator::make($data, ['deadline' => ['required', 'date', 'after:today', "before:$before"]]);
     }
 
-    public function edit (Request $request, $id)
+    public function editDeadline (Request $request, $id)
     {
         $deadline = $request['deadline'];
         $this->editDeadlineValidator($request->all())->validate();
-        Task::editTask($id);
+        Task::editTaskDeadline($id);
         return redirect()->route('todolists.index')->with('success', "Deadline successfully set on $deadline!");
+    }
+
+    protected function editTitleValidator(array $data)
+    {
+        return Validator::make($data, ['title' => ['required', 'string', 'max:128']]);
+    }
+
+    public function editTitle(Request $request, $id)
+    {
+        $this->editTitleValidator($request->all())->validate();
+        Task::editTaskTitle($id);
+        return redirect()->route('todolists.index')->with('success', 'Task title successfully edited!');
+    }
+
+    public function completeTask($id)
+    {
+        return Task::editTaskStatus($id);
+    }
+
+    public function sortTasks(Request $request)
+    {
+        $id=request('id');
+        $position=request('position');
+        return Task::where('id', $id)->update(['position'=>$position]);
     }
 
     public function delete ($id)
