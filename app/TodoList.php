@@ -15,7 +15,7 @@ class TodoList extends Model
 
     public function todolist_tasks()
     {
-        return $this->hasMany(Task::class, 'todolist_id');
+        return $this->hasMany(Task::class, 'todolist_id')->orderBy('position');
     }
 
     public static function getAllTodoListsForCurrentUser ()
