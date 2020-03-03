@@ -8,6 +8,7 @@ html, body {
 
 body {
     background: linear-gradient(to bottom, #fcf8eb, #e08100);
+    background-attachment: fixed;
 }
 
 button:active, button:focus {
@@ -16,6 +17,14 @@ button:active, button:focus {
 
 button::-moz-focus-inner {
   border: 0;
+}
+
+li {
+ list-style-type: none;
+}
+ul {
+ margin: 0;
+ padding: 0;
 }
 
 .nav-link {
@@ -160,15 +169,22 @@ button::-moz-focus-inner {
     background: linear-gradient(to top, #528467, #9dbcac);
 }
 
+.tasks-row {
+    background: white;   
+}
+
 .task-row:hover {
     background: #fff9bf;
 }
 
 .checkTask {
+    cursor: pointer;
     margin-left: 5px;
 }
 
 .task_title {
+    word-wrap: break-word;
+    max-width: 80%;
     color: grey;
     font-size: 14px;
     font-weight: 500;
@@ -191,11 +207,21 @@ button::-moz-focus-inner {
     color: #6d89c4;
 }
 
-.editTaskForm {
+.task_deadline {
+    cursor: pointer;
+    float: right;
+    word-wrap: break-word;
+    max-width: 80%;
+    color: grey;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.taskDeadlineForm {
     display: none;
 }
 
-.edit-taskSubmit {
+.edit-TaskDeadlineSubmit {
     background: none!important;
     border: none;
     padding: 0!important;
@@ -207,6 +233,21 @@ button::-moz-focus-inner {
 }
 
 .delete-taskSubmit {
+    background: none!important;
+    border: none;
+    padding: 0!important;
+    cursor: pointer;
+}
+
+.editTaskTitleForm {
+    display: none;
+}
+
+.editTaskTitleInput {
+    width: 60%;
+}
+
+.edit-taskSubmit {
     background: none!important;
     border: none;
     padding: 0!important;
