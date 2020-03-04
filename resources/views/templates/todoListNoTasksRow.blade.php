@@ -1,6 +1,6 @@
-<div class="row task-row">
+<div class="row noTask-row">
     <div class="col text-center">
-        <span>
+        <span class="noTasksSpan">
             No tasks there...
         </span>
     </div>
