@@ -23,9 +23,12 @@
 <main>
     @yield('content')
 </main>
+<footer>
+    <span id="copyright">© Ruby Garage</span>
+</footer>
 <script src="{{URL::asset('js/app.js')}}"></script>
-<script src="{{URL::asset('js/navigation.js')}}"></script>
 <script src="{{URL::asset('js/todoList.js')}}"></script>
 <script src="http://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+<script src="{{URL::asset('js/navigation.js')}}"></script>
 </body>
 </html>
