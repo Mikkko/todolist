@@ -9,6 +9,16 @@ html, body {
 body {
     background: linear-gradient(to bottom, #fcf8eb, #e08100);
     background-attachment: fixed;
+    height: 100%;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 20px;
+  z-index: -10;
+  text-align: center;
 }
 
 button:active, button:focus {
@@ -59,6 +69,7 @@ ul {
 
 .add-todo-button {
     margin-top: 100px;
+    margin-bottom: 100px;
     background: linear-gradient(to top, #3d5da2, #4f7fb3);
     border-color: steelblue;
     color: white;
@@ -71,10 +82,11 @@ ul {
 }
 
 .thead-row {
-    background: linear-gradient(to top, #395ca0, #5483b7);
+    background: linear-gradient(to top, #242381, #728bc3);
     min-height: 40px;
     padding-top: 5px;
-    box-shadow: 0 0 1px 0;
+    border: 1px solid #434961;
+    line-height: 1.2;
 }
 
 .tmiddle-row {
@@ -87,8 +99,26 @@ ul {
 .task-row {
     padding-top: 5px;
     min-height: 40px;
-    background: white;
     box-shadow: 0 0 1px 0;
+}
+
+.tasks-row:last-child {
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.task-row:last-child {
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.noTask-row {
+    padding-top: 5px;
+    min-height: 40px;
+    box-shadow: 0 0 1px 0;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    font-weight: 700;
 }
 
 .thead-row:hover .delete-todoList, .thead-row:hover .edit-todoList {
@@ -102,6 +132,8 @@ ul {
 
 .todolist_title {
     color: white;
+    max-width: 30vw;
+    word-wrap: break-word;
     font-size: 20px;
 }
 
@@ -160,17 +192,18 @@ ul {
 .createTaskSubmit {
     float: left;
     height: 30px;
-    width: 90px;
-    border-color: #9dbcac;
+    width: 140%;
+    margin-left: -30px;
+    border-color: #22b852;
     border-bottom-right-radius: 5px;
     border-top-right-radius: 5px;
     font-weight: bold;
     color: white;
-    background: linear-gradient(to top, #528467, #9dbcac);
+    background: linear-gradient(to top, darkgreen, #22c752);
 }
 
 .tasks-row {
-    background: white;   
+    background: white;
 }
 
 .task-row:hover {
@@ -179,22 +212,25 @@ ul {
 
 .checkTask {
     cursor: pointer;
-    margin-left: 5px;
+    vertical-align: middle;
 }
 
 .task_title {
-    word-wrap: break-word;
-    max-width: 80%;
+    max-width: 90%;
     color: grey;
     font-size: 14px;
     font-weight: 500;
+    word-break: break-all;
 }
 
 .sort-task, .edit-task, .delete-task {
-    margin-left: 10px;
     color: #8cb1e6;
     opacity: 0;
     transition: opacity .3s;
+}
+
+.edit-task {
+    margin-left: 25%;
 }
 
 .task-row:hover .sort-task, .task-row:hover .edit-task, .task-row:hover .delete-task {
@@ -210,7 +246,7 @@ ul {
 .task_deadline {
     cursor: pointer;
     float: right;
-    word-wrap: break-word;
+    display: inline-block !important;
     max-width: 80%;
     color: grey;
     font-size: 14px;
@@ -252,4 +288,14 @@ ul {
     border: none;
     padding: 0!important;
     cursor: pointer;
+}
+
+.btn-auth {
+    background: linear-gradient(to top, #3d5da2, #4f7fb3);
+    color: white;
+
+}
+
+#copyright {
+    color: white;
 }
