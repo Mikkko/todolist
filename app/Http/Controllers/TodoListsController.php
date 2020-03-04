@@ -21,7 +21,7 @@ class TodoListsController extends Controller
 
     protected function validator(array $data)
     {
-        return Validator::make($data, ['title' => ['required', 'string', 'max:10']]);
+        return Validator::make($data, ['title' => ['required', 'string', 'max:32']]);
     }
 
     public function edit(Request $request, $id)
@@ -34,6 +34,6 @@ class TodoListsController extends Controller
     public function delete ($id)
     {
         TodoList::deleteTodoList($id);
-        return redirect()->route('todolists.index')->with('success', "TodoList $id successfully deleted!");
+        return redirect()->route('todolists.index')->with('success', "TodoList successfully deleted!");
     }
 }
