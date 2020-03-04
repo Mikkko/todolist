@@ -1,7 +1,6 @@
 <div class="container-fluid mt-5">
     <div class="row justify-content-center">
         <div class="col-12 col-md-10 col-xl-4 todolist_{{$todolist->id}} todolist">
-
             <div class="row thead-row">
                 <div class="col-1">
                     <i class="fas fa-clipboard-list fa-2x"></i>
@@ -14,9 +13,9 @@
                         </button>
                         <i class="fas fa-times fa-lg cancel-editTodoList"></i>
                     </form>
-                    <span class="todolist_title">
+                    <p class="todolist_title">
                         {{$todolist->title}}
-                    </span>
+                    </p>
                 </div>
                 <div class="col-4 col-sm-2 todolist-menu">
                     <i onclick="showEditTodoListForm({{$todolist->id}})" class="fas fa-pencil-alt edit-todoList"></i>
@@ -29,7 +28,6 @@
                     </form>
                 </div>
             </div>
-
             <form action="/todolist/{{$todolist->id}}/task/create" method="post" class="create-taskForm">
                 {{csrf_field()}}
                 <div class="row tmiddle-row">
@@ -44,30 +42,20 @@
                     </div>
                 </div>
             </form>
+            <div class="row">
+              <ul class="tasks-row col-12">
+              @if(count($todolist->todolist_tasks)>0)
+                  @foreach($todolist->todolist_tasks as $task)
+                      <li id="{{$task->id}}" class="row task_{{$task->id}} task-row">
+                          @include('templates.todoListTaskRow')
+                      </li>
+                  @endforeach
+              </ul>
 
-            @if(count($todolist->todolist_tasks)>0)
-                <!-- <div class="row">
-                    <div class="col tasks-row">
-                        @foreach($todolist->todolist_tasks as $task)
-                            @include('templates.todoListTaskRow')
-                        @endforeach
-                    </div>
-                </div> -->
-
-                <div class="row">
-                    <div class="col">
-                        <ul class="tasks-row">
-                            @foreach($todolist->todolist_tasks as $task)
-                                <li id="{{$task->id}}">
-                                    @include('templates.todoListTaskRow')
-                                </li>
-                            @endforeach
-                        </ul>
-                    </div>
-                </div>
-            @else
-                @include('templates.todoListNoTasksRow')
-            @endif
+              @else
+                  @include('templates.todoListNoTasksRow')
+              @endif
+            </div>
         </div>
     </div>
 </div>
