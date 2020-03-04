@@ -10,6 +10,6 @@
             <input id="password" name="password" type="Password" class="form-control ">
         </div>
         <br>
-        <button type="submit" class="btn btn-primary">Login</button>
+        <button type="submit" class="btn btn-auth">Login</button>
     </form>
 </div>

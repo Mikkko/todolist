@@ -14,6 +14,6 @@
             <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
         </div>
         <br>
-        <button type="submit" class="btn btn-primary">Register</button>
+        <button type="submit" class="btn btn-auth">Register</button>
     </form>
 </div>
