@@ -8,10 +8,10 @@ class LoginController extends Controller
 {
     use AuthenticatesUsers;
 
-    protected function authenticated ()
+    protected function authenticated (Request $request)
     {
-        $username = Auth::user()->email;
-        return redirect('/')->with('success', "You are logged in, $username!");
+      $username = Auth::user()->email;
+      return redirect('/')->with('success', "You are logged in, $username!");
     }
 
     public function __construct()

@@ -23,6 +23,8 @@ return [
 
     'cipher' => 'AES-256-CBC',
 
+    'Auth' => Illuminate\Support\Facades\Auth::class,
+
     'providers' => [
         Illuminate\Auth\AuthServiceProvider::class,
         Illuminate\Broadcasting\BroadcastServiceProvider::class,
