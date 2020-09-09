@@ -37,7 +37,7 @@ class TasksController extends Controller
 
     protected function editTitleValidator(array $data)
     {
-        return Validator::make($data, ['title' => ['required', 'string', 'max:128']]);
+        return Validator::make($data, ['title' => ['required', 'longText', 'max:1024']]);
     }
 
     public function editTitle(Request $request, $id)
